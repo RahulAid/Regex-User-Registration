@@ -19,4 +19,21 @@ public class UserRegistration
             FirstName();
         }
     }
+
+    public void LastName()
+    {
+        Console.Write("\nEnter Last Name: ");
+        string lastName = Console.ReadLine();
+        var regex = new Regex(@"^[A-Z]{1}[a-z]{2,}$");
+        bool matchRes = regex.IsMatch(lastName);
+        if (matchRes == true)
+        {
+            Console.WriteLine($"{lastName} is valid");
+        }
+        else
+        {
+            Console.WriteLine($"{lastName} is invalid");
+            LastName();
+        }
+    }
 }
