@@ -75,9 +75,9 @@ public class UserRegistration
 
     public void Password()
     {
-        Console.Write("\nEnter a Password with atleast 8 characters : ");
+        Console.Write("\nEnter a Password with atleast one Uppercase Character : ");
         string password = Console.ReadLine();
-        var regex = new Regex(@"^[A-Za-z]{1}[A-Za-z0-9]{7,}");
+        var regex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z]).{8,15}$");
         bool matchRes = regex.IsMatch(password);
         if (matchRes == true)
         {
